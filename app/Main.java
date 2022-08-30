@@ -52,12 +52,12 @@ public class Main {
 
 
         graph.addEdge(new Extent(mainGate, jqb, 300));
-        graph.addEdge(new Extent(mainGate, UGFireService, 300));
-        graph.addEdge(new Extent(mainGate, akuafoHall, 900));
+        graph.addEdge(new Extent(mainGate, UGFireService, 240));
+        graph.addEdge(new Extent(mainGate, akuafoHall, 500));
 
-        graph.addEdge(new Extent(UGFireService, akuafoHall, 1100));
+        graph.addEdge(new Extent(UGFireService, akuafoHall, 650));
 
-        graph.addEdge(new Extent(greatHall, commonWealthHall, 1200));
+        graph.addEdge(new Extent(greatHall, commonWealthHall, 100));
 
         graph.addEdge(new Extent(nb, balmeLibrary, 600));
         graph.addEdge(new Extent(nb, businessSchool, 500));
@@ -66,42 +66,42 @@ public class Main {
         graph.addEdge(new Extent(nb, ugcs, 500));
 
         graph.addEdge(new Extent(voltaHall, businessSchool, 200));
-        graph.addEdge(new Extent(voltaHall, commonWealthHall, 500));
-        graph.addEdge(new Extent(voltaHall, legonHall, 500));
+        graph.addEdge(new Extent(voltaHall, commonWealthHall,450));
+        graph.addEdge(new Extent(voltaHall, legonHall, 190));
 
-        graph.addEdge(new Extent(businessSchool, ugcs, 100));
+        graph.addEdge(new Extent(businessSchool, ugcs, 70));
 
-        graph.addEdge(new Extent(legonHall, akuafoHall, 300));
-        graph.addEdge(new Extent(legonHall, athleticOval, 300));
-        graph.addEdge(new Extent(legonHall, commonWealthHall, 300));
-        graph.addEdge(new Extent(legonHall, nightMarket, 1500));
+        graph.addEdge(new Extent(legonHall, akuafoHall, 400));
+        graph.addEdge(new Extent(legonHall, athleticOval, 450));
+        graph.addEdge(new Extent(legonHall, commonWealthHall, 750));
+        graph.addEdge(new Extent(legonHall, nightMarket, 1200));
 
         graph.addEdge(new Extent(jqb, balmeLibrary, 850));
-        graph.addEdge(new Extent(jqb, akuafoHall, 1000));
-        graph.addEdge(new Extent(jqb, lawSchool, 450));
+        graph.addEdge(new Extent(jqb, akuafoHall, 700));
+        graph.addEdge(new Extent(jqb, lawSchool, 350));
 
-        graph.addEdge(new Extent(lawSchool, pentHall, 200));
+        graph.addEdge(new Extent(lawSchool, pentHall, 900));
 
         graph.addEdge(new Extent(ugcs, balmeLibrary, 200));
-        graph.addEdge(new Extent(ugcs, voltaHall, 400));
-        graph.addEdge(new Extent(ugcs, CSDepartment, 700));
-        graph.addEdge(new Extent(ugcs, nb, 450));
+        graph.addEdge(new Extent(ugcs, voltaHall, 350));
+        graph.addEdge(new Extent(ugcs, CSDepartment, 550));
+        graph.addEdge(new Extent(ugcs, nb, 650));
 
-        graph.addEdge(new Extent(CSDepartment, balmeLibrary, 850));
-        graph.addEdge(new Extent(CSDepartment, nb, 450));
-        graph.addEdge(new Extent(CSDepartment, akuafoHall, 1000));
-        graph.addEdge(new Extent(CSDepartment, lawSchool, 350));
+        graph.addEdge(new Extent(CSDepartment, balmeLibrary, 650));
+        graph.addEdge(new Extent(CSDepartment, nb, 550));
+        graph.addEdge(new Extent(CSDepartment, akuafoHall, 850));
+        graph.addEdge(new Extent(CSDepartment, lawSchool, 650));
 
         graph.addEdge(new Extent(balmeLibrary, athleticOval, 600));
         graph.addEdge(new Extent(balmeLibrary, akuafoHall, 270));
-        graph.addEdge(new Extent(balmeLibrary, legonHall, 450));
+        graph.addEdge(new Extent(balmeLibrary, legonHall, 500));
 
-        graph.addEdge(new Extent(athleticOval, akuafoHall, 500));
-        graph.addEdge(new Extent(athleticOval, nightMarket, 1000));
+        graph.addEdge(new Extent(athleticOval, akuafoHall, 550));
+        graph.addEdge(new Extent(athleticOval, nightMarket, 800));
 
         graph.addEdge(new Extent(akuafoHall, nightMarket, 1000));
 
-        graph.addEdge(new Extent(nightMarket, diasporaHalls, 1200));
+        graph.addEdge(new Extent(nightMarket, diasporaHalls, 850));
 
 
         String[] places =
