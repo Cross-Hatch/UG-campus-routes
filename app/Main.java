@@ -76,7 +76,7 @@ public class Main {
         graph.addEdge(new Extent(legonHall, commonWealthHall, 750));
         graph.addEdge(new Extent(legonHall, nightMarket, 1200));
 
-        graph.addEdge(new Extent(jqb, balmeLibrary, 850));
+//        graph.addEdge(new Extent(jqb, balmeLibrary, 850));
         graph.addEdge(new Extent(jqb, akuafoHall, 700));
         graph.addEdge(new Extent(jqb, lawSchool, 350));
 
@@ -84,8 +84,8 @@ public class Main {
 
         graph.addEdge(new Extent(ugcs, balmeLibrary, 200));
         graph.addEdge(new Extent(ugcs, voltaHall, 350));
-        graph.addEdge(new Extent(ugcs, CSDepartment, 550));
-        graph.addEdge(new Extent(ugcs, nb, 650));
+//        graph.addEdge(new Extent(ugcs, CSDepartment, 550));
+//        graph.addEdge(new Extent(ugcs, nb, 650));
 
         graph.addEdge(new Extent(CSDepartment, balmeLibrary, 650));
         graph.addEdge(new Extent(CSDepartment, nb, 550));
@@ -105,8 +105,8 @@ public class Main {
 
 
         String[] places =
-                {"Main Gate", "Night Market", "UG Fire Service", "CS Department", "Athletic Oval"
-                        ,"Diaspora","Volta Hall","Akuafo Hall","Legon Hall", "Great Hall",
+                {"Main Gate","Law school", "Night Market", "UG Fire Service", "CS Department", "Athletic Oval"
+                        ,"Diaspora","Volta Hall","Akuafo Hall","Business School", "Legon Hall", "Great Hall",
                         "NNB", "N Block", "JQB", "Balme Library","UGCS", "Pentagon Hall"};
         UserInterface userInterface = new UserInterface();
 
