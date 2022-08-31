@@ -74,9 +74,7 @@ public class Main {
         graph.addEdge(new Extent(legonHall, akuafoHall, 400));
         graph.addEdge(new Extent(legonHall, athleticOval, 450));
         graph.addEdge(new Extent(legonHall, commonWealthHall, 750));
-        graph.addEdge(new Extent(legonHall, nightMarket, 1200));
 
-//        graph.addEdge(new Extent(jqb, balmeLibrary, 850));
         graph.addEdge(new Extent(jqb, akuafoHall, 700));
         graph.addEdge(new Extent(jqb, lawSchool, 350));
 
@@ -84,15 +82,11 @@ public class Main {
 
         graph.addEdge(new Extent(ugcs, balmeLibrary, 200));
         graph.addEdge(new Extent(ugcs, voltaHall, 350));
-//        graph.addEdge(new Extent(ugcs, CSDepartment, 550));
-//        graph.addEdge(new Extent(ugcs, nb, 650));
 
         graph.addEdge(new Extent(CSDepartment, balmeLibrary, 650));
-        graph.addEdge(new Extent(CSDepartment, nb, 550));
         graph.addEdge(new Extent(CSDepartment, akuafoHall, 850));
         graph.addEdge(new Extent(CSDepartment, lawSchool, 650));
 
-        graph.addEdge(new Extent(balmeLibrary, athleticOval, 600));
         graph.addEdge(new Extent(balmeLibrary, akuafoHall, 270));
         graph.addEdge(new Extent(balmeLibrary, legonHall, 500));
 
