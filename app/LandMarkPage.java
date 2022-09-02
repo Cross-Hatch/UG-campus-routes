@@ -87,6 +87,7 @@ public class LandMarkPage extends JFrame {
         this.setSize(1300,550);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
+        this.getContentPane().setBackground(Color.cyan);
         this.setVisible(true);
     }
 
