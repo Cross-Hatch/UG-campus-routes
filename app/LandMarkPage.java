@@ -66,13 +66,13 @@ public class LandMarkPage extends JFrame {
         this.add(info);
 
         shortestPathDisplay = new JLabel();
-        shortestPathDisplay.setBounds(300, 400, 900, 80);
+        shortestPathDisplay.setBounds(300, 400, 900, 40);
         shortestPathDisplay.setBorder(new RoundedBorder(10));
         shortestPathDisplay.setFont(new Font("Serif",Font.BOLD, 20));
         this.add(shortestPathDisplay);
 
         distanceDisplay = new JLabel();
-        distanceDisplay.setBounds(250, 510, 400, 40);
+        distanceDisplay.setBounds(250, 470, 400, 40);
         this.add(distanceDisplay);
 
         JButton getPossiblePaths = new JButton("Get possible paths");
