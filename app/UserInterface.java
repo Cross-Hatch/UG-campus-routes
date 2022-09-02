@@ -7,10 +7,11 @@ import static app.Main.graph;
 
 public class UserInterface extends JFrame {
 
-    private static JComboBox<String> sourceCombo;
-    private static JComboBox<String> destinationCombo;
-    private static JLabel shortestPathDisplay;
-    private static JLabel distanceDisplay;
+    private final JComboBox<String> sourceCombo;
+    private final JComboBox<String> destinationCombo;
+    private final JLabel shortestPathDisplay;
+    private final JLabel distanceDisplay;
+    private final JButton landMarkButton;
 
     UserInterface(){
         this.setTitle("Finding possible paths to your destination");
@@ -66,14 +67,17 @@ public class UserInterface extends JFrame {
         getPossiblePaths.setBorder(new RoundedBorder(10));
         getPossiblePaths.setFocusable(false);
 
-        JButton landMarkButton = new JButton("Landmark button");
+        landMarkButton = new JButton("Landmark button");
         landMarkButton.setBounds(580, 260, 130, 25);
+        landMarkButton.setFocusable(false);
+        landMarkButton.setBorder(new RoundedBorder(10));
 
         this.add(getPossiblePaths);
         this.add(landMarkButton);
         this.setVisible(true);
 
         getPossiblePaths.addActionListener(this::getPaths);
+        landMarkButton.addActionListener(this::landMarkPath);
 
     }
 
@@ -92,6 +96,14 @@ public class UserInterface extends JFrame {
             distanceDisplay.setText("Approximate distance: "+Dijkstra.getTotalDistance(destinationDijkstra));
         }catch (NullPointerException exception){
             System.out.println(exception.getMessage());
+        }
+    }
+
+    public void landMarkPath(ActionEvent actionEvent){
+
+        if (actionEvent.getSource() == landMarkButton){
+            this.dispose();
+            new LandMarkPage();
         }
     }
 
