@@ -99,7 +99,7 @@ public class UserInterface extends JFrame {
         }
     }
 
-    public void landMarkPath(ActionEvent actionEvent){
+    private void landMarkPath(ActionEvent actionEvent){
 
         if (actionEvent.getSource() == landMarkButton){
             this.dispose();
