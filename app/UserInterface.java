@@ -42,7 +42,7 @@ public class UserInterface extends JFrame {
         String[] places =
                 {"Main Gate","Law school", "Night Market", "UG Fire Service", "CS Department", "Athletic Oval"
                         ,"Diaspora","Volta Hall","Akuafo Hall","Business School", "Legon Hall", "Great Hall",
-                        "NNB", "N Block", "JQB", "Balme Library","UGCS", "Pentagon Hall"};
+                        "NNB", "N Block", "Common wealth hall", "JQB", "Balme Library","UGCS", "Pentagon Hall"};
 
         sourceCombo = new JComboBox<>(places);
         sourceCombo.setBounds(550, 50, 200, 30);
