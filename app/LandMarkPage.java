@@ -113,7 +113,7 @@ public class LandMarkPage extends JFrame {
             String firstPath = Dijkstra.getShortestPath(sourceDijkstra, landMarkDijkstra);
             Dijkstra.findShortestPath(graph, landMarkDijkstra, destinationDijkstra);
             String secondPath = Dijkstra.getShortestPath(landMarkDijkstra, destinationDijkstra);
-            String fullPath = firstPath  + "\n" + secondPath;
+            String fullPath = firstPath + secondPath;
             shortestPathDisplay.setText(fullPath);
 
             distanceDisplay.setText("Approximate distance: "+Dijkstra.getTotalDistance(destinationDijkstra));
