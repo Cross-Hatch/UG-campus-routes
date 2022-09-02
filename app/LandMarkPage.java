@@ -9,7 +9,7 @@ public class LandMarkPage extends JFrame {
 
     private final JButton backButton;
     private final JComboBox<String> sourceCombo;
-    private final JComboBox<String> landMarkeCombo;
+    private final JComboBox<String> landMarkCombo;
     private final JComboBox<String> destinationCombo;
     private final JLabel shortestPathDisplay;
     private final JLabel distanceDisplay;
@@ -51,9 +51,9 @@ public class LandMarkPage extends JFrame {
         sourceCombo.setBounds(550, 50, 200, 30);
         this.add(sourceCombo);
 
-        landMarkeCombo = new JComboBox<>(places);
-        landMarkeCombo.setBounds(550,150,200,30);
-        this.add(landMarkeCombo);
+        landMarkCombo = new JComboBox<>(places);
+        landMarkCombo.setBounds(550,150,200,30);
+        this.add(landMarkCombo);
 
         destinationCombo = new JComboBox<>(places);
         destinationCombo.setBounds(550, 250, 200, 30);
