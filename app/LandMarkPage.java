@@ -90,7 +90,7 @@ public class LandMarkPage extends JFrame {
         this.setVisible(true);
     }
 
-    public void mainPage(ActionEvent actionEvent){
+    private void mainPage(ActionEvent actionEvent){
         if (actionEvent.getSource() == backButton){
             this.dispose();
             new UserInterface();
