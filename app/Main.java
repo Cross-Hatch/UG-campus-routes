@@ -1,10 +1,9 @@
 package app;
 
 public class Main {
-        public static Map graph = new Map();
+    public static Map graph = new Map();
 
     public static void main(String[] args) {
-
 
         Locations mainGate = new Locations("Main Gate");
         Locations UGFireService = new Locations("UG Fire Service");
@@ -25,7 +24,6 @@ public class Main {
         Locations businessSchool = new Locations("Business School");
         Locations lawSchool = new Locations("Law School");
         Locations commonWealthHall = new Locations("Common Wealth Hall");
-
 
         graph.addVertex(mainGate);
         graph.addVertex(greatHall);
@@ -93,7 +91,6 @@ public class Main {
         graph.addEdge(new Extent(akuafoHall, nightMarket, 1000));
 
         graph.addEdge(new Extent(nightMarket, diasporaHalls, 850));
-
 
         new UserInterface();
 
