@@ -48,18 +48,18 @@ public class UserInterface extends JFrame {
 
         JLabel info = new JLabel();
         info.setText("Shortest Path: ");
-        info.setBounds(100, 300, 250, 40);
+        info.setBounds(100, 400, 250, 40);
         info.setFont(new Font("Serif",Font.BOLD, 20));
         this.add(info);
 
         shortestPathDisplay = new JLabel();
-        shortestPathDisplay.setBounds(300, 300, 900, 40);
+        shortestPathDisplay.setBounds(300, 400, 900, 40);
         shortestPathDisplay.setBorder(new RoundedBorder(10));
         shortestPathDisplay.setFont(new Font("Serif",Font.BOLD, 20));
         this.add(shortestPathDisplay);
 
         distanceDisplay = new JLabel();
-        distanceDisplay.setBounds(250, 340, 400, 40);
+        distanceDisplay.setBounds(250, 470, 400, 40);
         this.add(distanceDisplay);
 
         JButton getPossiblePaths = new JButton("Get possible paths");
@@ -68,7 +68,7 @@ public class UserInterface extends JFrame {
         getPossiblePaths.setFocusable(false);
 
         landMarkButton = new JButton("Landmark button");
-        landMarkButton.setBounds(580, 260, 130, 25);
+        landMarkButton.setBounds(580, 300, 130, 25);
         landMarkButton.setFocusable(false);
         landMarkButton.setBorder(new RoundedBorder(10));
 
