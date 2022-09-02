@@ -9,6 +9,7 @@ public class LandMarkPage extends JFrame {
 
     private final JButton backButton;
     private final JComboBox<String> sourceCombo;
+    private final JComboBox<String> landMarkeCombo;
     private final JComboBox<String> destinationCombo;
     private final JLabel shortestPathDisplay;
     private final JLabel distanceDisplay;
@@ -29,23 +30,33 @@ public class LandMarkPage extends JFrame {
         currentLocation.setFont(new Font("Serif", Font.BOLD, 20));
         this.add(currentLocation);
 
+        JLabel landMarkLocation = new JLabel();
+        landMarkLocation.setText("Select desired landmark:");
+        landMarkLocation.setBounds(100, 150, 250, 40);
+        landMarkLocation.setFont(new Font("Serif", Font.BOLD, 20));
+        this.add(landMarkLocation);
+
         JLabel destinationLocation = new JLabel();
         destinationLocation.setText("Select destination:");
-        destinationLocation.setBounds(100, 150, 200, 40);
+        destinationLocation.setBounds(100, 250, 200, 40);
         destinationLocation.setFont(new Font("Serif", Font.BOLD, 20));
         this.add(destinationLocation);
 
         String[] places =
                 {"Main Gate","Law school", "Night Market", "UG Fire Service", "CS Department", "Athletic Oval"
                         ,"Diaspora","Volta Hall","Akuafo Hall","Business School", "Legon Hall", "Great Hall",
-                        "NNB", "N Block", "JQB", "Balme Library","UGCS", "Pentagon Hall"};
+                        "NNB", "N Block", "JQB", "Balme+ Library","UGCS", "Pentagon Hall"};
 
         sourceCombo = new JComboBox<>(places);
         sourceCombo.setBounds(550, 50, 200, 30);
         this.add(sourceCombo);
 
+        landMarkeCombo = new JComboBox<>(places);
+        landMarkeCombo.setBounds(550,150,200,30);
+        this.add(landMarkeCombo);
+
         destinationCombo = new JComboBox<>(places);
-        destinationCombo.setBounds(550, 150, 200, 30);
+        destinationCombo.setBounds(550, 250, 200, 30);
         this.add(destinationCombo);
 
         JLabel info = new JLabel();
@@ -65,7 +76,7 @@ public class LandMarkPage extends JFrame {
         this.add(distanceDisplay);
 
         JButton getPossiblePaths = new JButton("Get possible paths");
-        getPossiblePaths.setBounds(580, 230, 130, 25);
+        getPossiblePaths.setBounds(580, 350, 130, 25);
         getPossiblePaths.setBorder(new RoundedBorder(10));
         getPossiblePaths.setFocusable(false);
         this.add(getPossiblePaths);
@@ -75,6 +86,7 @@ public class LandMarkPage extends JFrame {
         this.setLayout(null);
         this.setSize(1300,550);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(false);
         this.setVisible(true);
     }
 
@@ -85,7 +97,7 @@ public class LandMarkPage extends JFrame {
         }
     }
 
-    public void getPaths(ActionEvent actionEvent) {
+    private void getPaths(ActionEvent actionEvent) {
         try {
             String theOrigin = sourceCombo.getSelectedItem().toString();
             String theEnd = destinationCombo.getSelectedItem().toString();
