@@ -66,13 +66,13 @@ public class LandMarkPage extends JFrame {
         this.add(info);
 
         shortestPathDisplay = new JLabel();
-        shortestPathDisplay.setBounds(300, 400, 900, 40);
+        shortestPathDisplay.setBounds(300, 400, 900, 80);
         shortestPathDisplay.setBorder(new RoundedBorder(10));
         shortestPathDisplay.setFont(new Font("Serif",Font.BOLD, 20));
         this.add(shortestPathDisplay);
 
         distanceDisplay = new JLabel();
-        distanceDisplay.setBounds(250, 470, 400, 40);
+        distanceDisplay.setBounds(250, 510, 400, 40);
         this.add(distanceDisplay);
 
         JButton getPossiblePaths = new JButton("Get possible paths");
@@ -100,14 +100,20 @@ public class LandMarkPage extends JFrame {
     private void getPaths(ActionEvent actionEvent) {
         try {
             String theOrigin = sourceCombo.getSelectedItem().toString();
+            String theLandMark = landMarkCombo.getSelectedItem().toString();
             String theEnd = destinationCombo.getSelectedItem().toString();
 
             Locations sourceDijkstra = graph.getNodeByName(theOrigin);
+            Locations landMarkDijkstra = graph.getNodeByName(theLandMark);
             Locations destinationDijkstra = graph.getNodeByName(theEnd);
 
-            Dijkstra.findShortestPath(graph, sourceDijkstra, destinationDijkstra);
-            String path = Dijkstra.getShortestPath(sourceDijkstra, destinationDijkstra);
-            shortestPathDisplay.setText(path);
+            //  Concat path from source to landmark and landmark to destination.
+            Dijkstra.findShortestPath(graph, sourceDijkstra, landMarkDijkstra);
+            String firstPath = Dijkstra.getShortestPath(sourceDijkstra, landMarkDijkstra);
+            Dijkstra.findShortestPath(graph, landMarkDijkstra, destinationDijkstra);
+            String secondPath = Dijkstra.getShortestPath(landMarkDijkstra, destinationDijkstra);
+            String fullPath = firstPath  + "\n" + secondPath;
+            shortestPathDisplay.setText(fullPath);
 
             distanceDisplay.setText("Approximate distance: "+Dijkstra.getTotalDistance(destinationDijkstra));
         }catch (NullPointerException exception){
