@@ -43,7 +43,7 @@ public class LandMarkPage extends JFrame {
         this.add(destinationLocation);
 
         String[] places =
-                {"Main Gate","Law school", "Night Market", "UG Fire Service", "CS Department", "Athletic Oval"
+                {"Common wealth hall", "Main Gate","Law school", "Night Market", "UG Fire Service", "CS Department", "Athletic Oval"
                         ,"Diaspora","Volta Hall","Akuafo Hall","Business School", "Legon Hall", "Great Hall",
                         "NNB", "N Block", "JQB", "Balme+ Library","UGCS", "Pentagon Hall"};
 
