@@ -1,8 +1,5 @@
 package app;
 
-import javax.swing.*;
-import java.awt.*;
-
 public class Main {
         public static Map graph = new Map();
 
@@ -98,73 +95,7 @@ public class Main {
         graph.addEdge(new Extent(nightMarket, diasporaHalls, 850));
 
 
-        String[] places =
-                {"Main Gate","Law school", "Night Market", "UG Fire Service", "CS Department", "Athletic Oval"
-                        ,"Diaspora","Volta Hall","Akuafo Hall","Business School", "Legon Hall", "Great Hall",
-                        "NNB", "N Block", "JQB", "Balme Library","UGCS", "Pentagon Hall"};
-        UserInterface userInterface = new UserInterface();
-
-        JLabel currentLocation = new JLabel();
-        currentLocation.setText("Select current location:");
-        currentLocation.setBounds(100, 50, 200, 40);
-        currentLocation.setFont(new Font("Serif", Font.BOLD, 20));
-        userInterface.add(currentLocation);
-
-        JLabel destinationLocation = new JLabel();
-        destinationLocation.setText("Select destination:");
-        destinationLocation.setBounds(100, 150, 200, 40);
-        destinationLocation.setFont(new Font("Serif", Font.BOLD, 20));
-        userInterface.add(destinationLocation);
-
-        JComboBox<String> sourceCombo = new JComboBox<>(places);
-        sourceCombo.setBounds(550, 50, 200, 30);
-        userInterface.add(sourceCombo);
-
-        JComboBox<String> destinationCombo = new JComboBox<>(places);
-        destinationCombo.setBounds(550, 150, 200, 30);
-        userInterface.add(destinationCombo);
-
-        JLabel info = new JLabel();
-        info.setText("Shortest Path: ");
-        info.setBounds(100, 300, 250, 40);
-        info.setFont(new Font("Serif",Font.BOLD, 20));
-        userInterface.add(info);
-
-        JLabel shortestPathDisplay = new JLabel();
-        shortestPathDisplay.setBounds(300, 300, 900, 40);
-        shortestPathDisplay.setBorder(new RoundedBorder(10));
-        shortestPathDisplay.setFont(new Font("Serif",Font.BOLD, 20));
-        userInterface.add(shortestPathDisplay);
-
-        JLabel distanceDisplay = new JLabel();
-        distanceDisplay.setBounds(250, 340, 400, 40);
-        userInterface.add(distanceDisplay);
-
-        JButton button = new JButton("Get possible paths");
-        button.setBounds(580, 230, 130, 25);
-        button.setBorder(new RoundedBorder(10));
-        button.setFocusable(false);
-
-        userInterface.add(button);
-        userInterface.setVisible(true);
-
-        button.addActionListener( e ->  {
-                try {
-                    String theOrigin = sourceCombo.getSelectedItem().toString();
-                    String theEnd = destinationCombo.getSelectedItem().toString();
-
-                    Locations sourceDijkstra = graph.getNodeByName(theOrigin);
-                    Locations destinationDijkstra = graph.getNodeByName(theEnd);
-
-                    Dijkstra.findShortestPath(graph, sourceDijkstra, destinationDijkstra);
-                    String path = Dijkstra.getShortestPath(sourceDijkstra, destinationDijkstra);
-                    shortestPathDisplay.setText(path);
-
-                    distanceDisplay.setText("Approximate distance: "+Dijkstra.getTotalDistance(destinationDijkstra));
-                }catch (NullPointerException exception){
-                    System.out.println(exception.getMessage());
-                }
-        });
+        new UserInterface();
 
     }
 }
