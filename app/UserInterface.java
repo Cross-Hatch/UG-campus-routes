@@ -81,7 +81,7 @@ public class UserInterface extends JFrame {
 
     }
 
-    public void getPaths(ActionEvent actionEvent) {
+    private void getPaths(ActionEvent actionEvent) {
         try {
             String theOrigin = sourceCombo.getSelectedItem().toString();
             String theEnd = destinationCombo.getSelectedItem().toString();
