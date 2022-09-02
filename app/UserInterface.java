@@ -27,6 +27,12 @@ public class UserInterface extends JFrame {
         currentLocation.setFont(new Font("Serif", Font.BOLD, 20));
         this.add(currentLocation);
 
+        JLabel landMarkLocation = new JLabel();
+        landMarkLocation.setText("Use a landmark instead:");
+        landMarkLocation.setBounds(100, 300, 250, 40);
+        landMarkLocation.setFont(new Font("Serif", Font.BOLD, 20));
+        this.add(landMarkLocation);
+
         JLabel destinationLocation = new JLabel();
         destinationLocation.setText("Select destination:");
         destinationLocation.setBounds(100, 150, 200, 40);
