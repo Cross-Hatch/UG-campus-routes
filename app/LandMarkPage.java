@@ -104,6 +104,7 @@ public class LandMarkPage extends JFrame {
         this.setVisible(true);
     }
 
+    // Handles switching from landmark page to UI page.
     private void mainPage(ActionEvent actionEvent){
         if (actionEvent.getSource() == backButton){
             this.dispose();
@@ -111,25 +112,36 @@ public class LandMarkPage extends JFrame {
         }
     }
 
+    // Prints paths and total distance.
     private void getPaths(ActionEvent actionEvent) {
         try {
             String theOrigin = sourceCombo.getSelectedItem().toString();
             String theLandMark = landMarkCombo.getSelectedItem().toString();
             String theEnd = destinationCombo.getSelectedItem().toString();
 
+            // Gets item of source, landmark and destination.
             Locations sourceDijkstra = graph.getNodeByName(theOrigin);
             Locations landMarkDijkstra = graph.getNodeByName(theLandMark);
             Locations destinationDijkstra = graph.getNodeByName(theEnd);
 
             //  Print path from source to landmark and landmark to destination.
+
+            // Finds path and get distance between source and landmark.
             Dijkstra.findShortestPath(graph, sourceDijkstra, landMarkDijkstra);
             String firstPath = Dijkstra.getShortestPath(sourceDijkstra, landMarkDijkstra);
+            float firstPathDistance = Dijkstra.getTotalDistance(landMarkDijkstra);
+
+            // Finds path and get distance between landmark and destination.
             Dijkstra.findShortestPath(graph, landMarkDijkstra, destinationDijkstra);
             String secondPath = Dijkstra.getShortestPath(landMarkDijkstra, destinationDijkstra);
+            float secondPathDistance = Dijkstra.getTotalDistance(destinationDijkstra);
+
+            float totalPathDistance = firstPathDistance + secondPathDistance;
+
             firstHalfPath.setText(firstPath);
             secondHalfPath.setText(secondPath);
 
-            distanceDisplay.setText("Approximate distance: "+Dijkstra.getTotalDistance(destinationDijkstra));
+            distanceDisplay.setText("Approximate distance: " + totalPathDistance + "km");
         }catch (NullPointerException exception){
             System.out.println(exception.getMessage());
         }
