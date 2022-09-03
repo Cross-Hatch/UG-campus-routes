@@ -13,7 +13,6 @@ public class Dijkstra {
     public static void findShortestPath(Digraph graph, Locations source, Locations destination) {
         if (source == destination) {
             System.out.print(source.getName());
-            return;
         }
 
         for (Locations vertex : graph.getNodes()) {
@@ -32,7 +31,7 @@ public class Dijkstra {
 
             ArrayList<Extent> edges = graph.getDestinationEdges(minNode);
             for (Extent edge : edges) {
-                // Checking for cyles: i.e., if we've not already visited this vertex.
+                // Checking for cycles: i.e., if we've not already visited this vertex.
                 if (NOT_VISITED.contains(edge.getDestination())) {
 
                     // Calculate alternative cost
@@ -53,12 +52,12 @@ public class Dijkstra {
     }
 
     private static void printDistances(Locations destination) {
-        System.out.println("Total Distance: " +
+        System.out.println("Approximate Distance: " +
                 String.format("%.3f", DISTANCE_MAP.get(destination)/1000F) + "km \n");
     }
 
-    public static String getTotalDistance(Locations destination) {
-        return String.format("%.3f", DISTANCE_MAP.get(destination)/1000f) + "km";
+    public static float getTotalDistance(Locations destination) {
+        return DISTANCE_MAP.get(destination)/1000F;
     }
 
 /*    private static void printPrevious() {
