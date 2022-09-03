@@ -102,6 +102,7 @@ public class LandMarkPage extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.getContentPane().setBackground(Color.cyan);
+        this.setTitle("Finding possible routes based on a given landmark");
         this.setVisible(true);
     }
 
