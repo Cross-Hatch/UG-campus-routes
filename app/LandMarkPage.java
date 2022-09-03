@@ -86,6 +86,7 @@ public class LandMarkPage extends JFrame {
 
         distanceDisplay = new JLabel();
         distanceDisplay.setBounds(250, 600, 400, 40);
+        distanceDisplay.setFont(new Font("Serif", Font.BOLD, 20));
         this.add(distanceDisplay);
 
         JButton getPossiblePaths = new JButton("Get possible paths");
