@@ -11,7 +11,8 @@ public class LandMarkPage extends JFrame {
     private final JComboBox<String> sourceCombo;
     private final JComboBox<String> landMarkCombo;
     private final JComboBox<String> destinationCombo;
-    private final JLabel shortestPathDisplay;
+    private final JLabel firstHalfPath;
+    private final JLabel secondHalfPath;
     private final JLabel distanceDisplay;
 
     LandMarkPage(){
@@ -59,20 +60,32 @@ public class LandMarkPage extends JFrame {
         destinationCombo.setBounds(550, 250, 200, 30);
         this.add(destinationCombo);
 
-        JLabel info = new JLabel();
-        info.setText("Shortest Path: ");
-        info.setBounds(100, 400, 250, 40);
-        info.setFont(new Font("Serif",Font.BOLD, 20));
-        this.add(info);
+        JLabel initialPath = new JLabel();
+        initialPath.setText("Initial path: ");
+        initialPath.setBounds(100, 400, 250, 40);
+        initialPath.setFont(new Font("Serif",Font.BOLD, 20));
+        this.add(initialPath);
 
-        shortestPathDisplay = new JLabel();
-        shortestPathDisplay.setBounds(300, 400, 900, 40);
-        shortestPathDisplay.setBorder(new RoundedBorder(10));
-        shortestPathDisplay.setFont(new Font("Serif",Font.BOLD, 20));
-        this.add(shortestPathDisplay);
+        JLabel secondPath = new JLabel();
+        secondPath.setText("Final path: ");
+        secondPath.setBounds(100, 500, 250, 40);
+        secondPath.setFont(new Font("Serif",Font.BOLD, 20));
+        this.add(secondPath);
+
+        firstHalfPath = new JLabel();
+        firstHalfPath.setBounds(300, 400, 800, 40);
+        firstHalfPath.setBorder(new RoundedBorder(10));
+        firstHalfPath.setFont(new Font("Serif",Font.BOLD, 20));
+        this.add(firstHalfPath);
+
+        secondHalfPath = new JLabel();
+        secondHalfPath.setBounds(300, 500, 800, 40);
+        secondHalfPath.setBorder(new RoundedBorder(10));
+        secondHalfPath.setFont(new Font("Serif",Font.BOLD, 20));
+        this.add(secondHalfPath);
 
         distanceDisplay = new JLabel();
-        distanceDisplay.setBounds(250, 470, 400, 40);
+        distanceDisplay.setBounds(250, 600, 400, 40);
         this.add(distanceDisplay);
 
         JButton getPossiblePaths = new JButton("Get possible paths");
@@ -84,7 +97,7 @@ public class LandMarkPage extends JFrame {
         getPossiblePaths.addActionListener(this::getPaths);
 
         this.setLayout(null);
-        this.setSize(1300,550);
+        this.setSize(1300,700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.getContentPane().setBackground(Color.cyan);
@@ -108,13 +121,13 @@ public class LandMarkPage extends JFrame {
             Locations landMarkDijkstra = graph.getNodeByName(theLandMark);
             Locations destinationDijkstra = graph.getNodeByName(theEnd);
 
-            //  Concat path from source to landmark and landmark to destination.
+            //  Print path from source to landmark and landmark to destination.
             Dijkstra.findShortestPath(graph, sourceDijkstra, landMarkDijkstra);
             String firstPath = Dijkstra.getShortestPath(sourceDijkstra, landMarkDijkstra);
             Dijkstra.findShortestPath(graph, landMarkDijkstra, destinationDijkstra);
             String secondPath = Dijkstra.getShortestPath(landMarkDijkstra, destinationDijkstra);
-            String fullPath = firstPath + secondPath;
-            shortestPathDisplay.setText(fullPath);
+            firstHalfPath.setText(firstPath);
+            secondHalfPath.setText(secondPath);
 
             distanceDisplay.setText("Approximate distance: "+Dijkstra.getTotalDistance(destinationDijkstra));
         }catch (NullPointerException exception){
