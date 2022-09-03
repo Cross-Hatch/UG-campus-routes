@@ -66,6 +66,7 @@ public class UserInterface extends JFrame {
 
         distanceDisplay = new JLabel();
         distanceDisplay.setBounds(250, 470, 400, 40);
+        distanceDisplay.setFont(new Font("Serif", Font.BOLD, 20));
         this.add(distanceDisplay);
 
         JButton getPossiblePaths = new JButton("Get possible paths");
@@ -99,7 +100,7 @@ public class UserInterface extends JFrame {
             String path = Dijkstra.getShortestPath(sourceDijkstra, destinationDijkstra);
             shortestPathDisplay.setText(path);
 
-            distanceDisplay.setText("Approximate distance: "+Dijkstra.getTotalDistance(destinationDijkstra));
+            distanceDisplay.setText("Approximate distance: "+Dijkstra.getTotalDistance(destinationDijkstra) + "km");
         }catch (NullPointerException exception){
             System.out.println(exception.getMessage());
         }
