@@ -75,13 +75,13 @@ public class LandMarkPage extends JFrame {
         firstHalfPath = new JLabel();
         firstHalfPath.setBounds(300, 400, 800, 40);
         firstHalfPath.setBorder(new RoundedBorder(10));
-        firstHalfPath.setFont(new Font("Serif",Font.BOLD, 20));
+        firstHalfPath.setFont(new Font("Serif",Font.BOLD, 15));
         this.add(firstHalfPath);
 
         secondHalfPath = new JLabel();
         secondHalfPath.setBounds(300, 500, 800, 40);
         secondHalfPath.setBorder(new RoundedBorder(10));
-        secondHalfPath.setFont(new Font("Serif",Font.BOLD, 20));
+        secondHalfPath.setFont(new Font("Serif",Font.BOLD, 15));
         this.add(secondHalfPath);
 
         distanceDisplay = new JLabel();
