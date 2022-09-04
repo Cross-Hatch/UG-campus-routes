@@ -23,9 +23,9 @@ public class Dijkstra {
 
         DISTANCE_MAP.put(source, 0);
 
-        Locations minNode = findVertextWithMinDist();
+        Locations minNode = findVertexWithMinDist();
         while (NOT_VISITED.size() > 0 && minNode != null) {
-            minNode = findVertextWithMinDist();
+            minNode = findVertexWithMinDist();
 
             NOT_VISITED.remove(minNode);
 
@@ -96,7 +96,7 @@ public class Dijkstra {
     private static void printShortestPath(Locations source, Locations destination) {
         // Using the preceding Vertex, re-create the path to your target/destination.
         System.out.println("\nShortest path from '" + source.getName() + "' to '" +
-                destination.getName() + "' using Dijkstra's algorithm.");
+                destination.getName() + "'");
         ArrayList<Locations> path = new ArrayList<>();
         System.out.print(source.getName());
         while (PREVIOUS_VERTEX.get(destination) != null) {
@@ -111,7 +111,7 @@ public class Dijkstra {
         System.out.println();
     }
 
-    private static Locations findVertextWithMinDist() {
+    private static Locations findVertexWithMinDist() {
         // Linear search for the min cost vertex based on the distance. 
         Locations minNode = null;
         long minDistance = Long.MAX_VALUE;
