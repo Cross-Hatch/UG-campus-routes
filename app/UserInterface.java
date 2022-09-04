@@ -61,7 +61,7 @@ public class UserInterface extends JFrame {
         shortestPathDisplay = new JLabel();
         shortestPathDisplay.setBounds(300, 400, 900, 40);
         shortestPathDisplay.setBorder(new RoundedBorder(10));
-        shortestPathDisplay.setFont(new Font("Serif",Font.BOLD, 20));
+        shortestPathDisplay.setFont(new Font("Serif",Font.BOLD, 15));
         this.add(shortestPathDisplay);
 
         distanceDisplay = new JLabel();
