@@ -143,10 +143,13 @@ public class LandMarkPage extends JFrame {
             firstHalfPath.setText(firstPath);
             secondHalfPath.setText(secondPath);
 
-            distanceDisplay.setText("Approximate distance: " + totalPathDistance + "km");
+            distanceDisplay.setText("Approximate distance: " + totalDistance(totalPathDistance) + "km");
         }catch (NullPointerException exception){
             System.out.println(exception.getMessage());
         }
+    }
+    private static String totalDistance(float total){
+        return String.format("%.3f", total);
     }
 
 }
