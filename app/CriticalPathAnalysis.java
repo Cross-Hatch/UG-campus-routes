@@ -1,6 +1,8 @@
 package app;
 
-public class CriticalPathAnalysis {
+import javax.swing.*;
+
+public class CriticalPathAnalysis extends JFrame {
     CriticalPathAnalysis(){
 
         int[][] graphWeight = new int[18][18];

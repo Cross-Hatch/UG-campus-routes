@@ -44,9 +44,8 @@ public class LandMarkPage extends JFrame {
         this.add(destinationLocation);
 
         String[] places =
-                {"Common wealth hall", "Main Gate","Law school", "Night Market", "UG Fire Service", "CS Department", "Athletic Oval"
-                        ,"Diaspora","Volta Hall","Akuafo Hall","Business School", "Legon Hall", "Great Hall",
-                        "NNB", "N Block", "JQB", "Balme+ Library","UGCS", "Pentagon Hall"};
+                {"Main Gate","UG Fire Service", "CS Department","Volta Hall","Akuafo Hall","Business School", "Legon Hall", "Great Hall",
+                        "NNB", "Common wealth hall", "JQB", "Balme Library","UGCS"};
 
         sourceCombo = new JComboBox<>(places);
         sourceCombo.setBounds(550, 50, 200, 30);
